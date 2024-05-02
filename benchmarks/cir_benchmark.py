@@ -6,6 +6,8 @@ from avalanche.benchmarks import dataset_benchmark
 
 from utils.generic import set_random_seed
 
+from strategies.data_augmentation import DataAugmentation, get_data_augmentation
+
 
 def generate_benchmark(
         seed,
@@ -22,6 +24,10 @@ def generate_benchmark(
 
     # Sample indices for each class
     selected_indices = {}
+
+    # Add Data Augmentation (to not use, comment both lines)
+    transform = get_data_augmentation(DataAugmentation.AutoAugment)
+    train_set = train_set.with_transforms("train").replace_current_transform_group(transform)
 
     def sample_per_class(c):
         selected_indices[c] = {}

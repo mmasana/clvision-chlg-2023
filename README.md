@@ -60,9 +60,11 @@ The changes can be seen by checking the difference between the original
 
 
 - **Data augmentation**: we follow an established data augmentation technique for
-this dataset type ([AutoAugment](https://openaccess.thecvf.com/content_CVPR_2019/papers/Cubuk_AutoAugment_Learning_Augmentation_Strategies_From_Data_CVPR_2019_paper.pdf), CVPR 2019)
+this dataset type ([AutoAugment](https://openaccess.thecvf.com/content_CVPR_2019/papers/Cubuk_AutoAugment_Learning_Augmentation_Strategies_From_Data_CVPR_2019_paper.pdf), CVPR 2019).
 The transformations used are defined in
-[`strategies/data_augmentation.py`](./strategies/data_augmentation.py).
+[`strategies/data_augmentation.py`](./strategies/data_augmentation.py),
+and for simplicity, we replace the default transformations directly
+in [`benchmarks/cir_benchmark.py`](benchmarks/cir_benchmark.py).
 
 
 - **Horde**: our proposed strategy, which contains both the feature extractor's
